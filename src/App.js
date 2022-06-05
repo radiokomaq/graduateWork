@@ -236,7 +236,7 @@ let CdFilmElem = filmEvent.map(r=> <Route path={r.url} element={<FilmEleming id=
         </div>
 
         <div className='footer'>
-          
+          dllldflfdlf;
           <Foot />
  </div>
 
