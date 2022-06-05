@@ -1,0 +1,5 @@
+.gift{
+    background-color: rgb(68, 39, 99);
+    display: grid;
+    grid-template-rows: 1fr -1fr;
+}

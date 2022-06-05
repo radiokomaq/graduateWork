@@ -1,0 +1,28 @@
+.niz{
+    grid-area: n;
+    /* border: 1px solid blue; */
+    font-size: 14pt;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 75px;
+    justify-items: center;
+    align-items: end;
+    
+
+}
+
+.niz a {
+    text-decoration: none;
+    color:black;
+}
+.niz a:hover{
+    color:gold;
+    font-size: 15pt;
+}
+a.active{
+    border:3.5px solid crimson;
+    font-size: 15pt;
+    border-radius: 6px;
+    color:gold;
+    background-color: crimson;
+}

@@ -1,0 +1,37 @@
+.foterlog {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    justify-self: end;
+   
+
+}
+.left{
+margin-left: 4%;
+}
+.rith{
+    /* align-content: end; */
+    /* align-items: end; */
+    /* align-self: end; */
+    /* justify-self: end; */
+    /* justify-items: end; */
+    justify-self: end;
+    margin-right: 4%;
+    
+    /* justify-items: end; */
+    /* justify-content: center; */
+
+}
+
+.foterlog img {
+    width: 20%;
+    
+    /* align-content: end; */
+    /* align-items: end; */
+    /* align-self: end; */
+    /* justify-self: end; */
+    /* justify-self: end; */
+    /* justify-items: end; */
+    /* justify-items: end; */
+
+}

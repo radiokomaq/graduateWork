@@ -1,0 +1,19 @@
+.krftkins {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-gap: 1%;
+
+}
+
+h2 {
+    color: whitesmoke;
+}
+
+.kinos {
+    border: 1.75px solid black;
+    border-radius: 2.5%;
+}
+
+.kinos img {
+    image-rendering: pixelated;
+}

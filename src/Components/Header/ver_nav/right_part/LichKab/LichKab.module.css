@@ -1,0 +1,13 @@
+.lich{
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: rgb(231,237,239);
+    display: grid;
+    grid-template-columns: 40% 1fr;
+}
+.dobav{
+    display: grid;
+    grid-column-start: 3;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}

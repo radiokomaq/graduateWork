@@ -1,0 +1,16 @@
+.detalic{
+    background-color: rgb(68, 39, 99);
+    margin-left: 8.5%;
+    margin-right: 8.5%;
+    display:grid;
+    grid-template-rows: 7% 30% 1fr;
+    grid-gap: 1em;
+}
+.detalic img{
+    
+    justify-self: center;
+}
+.detalic h1{
+    color: whitesmoke;
+    justify-self: center;
+}

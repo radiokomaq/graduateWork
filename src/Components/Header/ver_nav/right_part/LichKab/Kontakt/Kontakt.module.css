@@ -1,0 +1,35 @@
+.kont{
+    justify-self: center;
+}
+.kont span{
+    margin-left: 3%;
+}
+.kont1{
+    margin-top: 2%;
+    border-radius: 2%;
+    border: 1px solid black;
+}
+.kont2{
+    margin-top: 2%;
+    border-radius: 2%;
+    border: 1px solid black;
+}
+.dvig{
+margin-left: 3%;
+}
+.kont3{
+    margin-top: 2%;
+    border-radius: 2%;
+    border: 1px solid black;
+}
+.kont3 h4{
+    margin-left: 3%;
+   
+}
+.kont3 p{
+    /* color:rgb(231,237,239) */
+}
+.kontop{
+    display: grid;
+    grid: 1fr 1fr/16% 1fr
+}

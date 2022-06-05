@@ -1,0 +1,13 @@
+.left_part{
+    /* border: 2px solid purple; */
+    display: grid;
+    grid-template-columns: 15% 15%;
+    grid-column-gap: 0px;
+    
+}
+
+.left_part img{
+    height: 4em;
+    width: 100%;
+    text-align: center;
+}

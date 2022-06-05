@@ -1,0 +1,14 @@
+.event{
+    background: url("../../../redux/fotos/fon_fiolet.jpg");
+    display: grid;
+    grid-template-rows: 10% 1fr;
+
+}
+.event img{
+width: 50%;
+height: 75%;
+}
+.info{
+    color:whitesmoke;
+    justify-self: center;
+}

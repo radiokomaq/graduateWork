@@ -1,0 +1,12 @@
+.footer{
+    border: 3px solid red;
+    grid-area: f;
+    display:grid;
+
+    grid-template-rows: 30% -1fr;
+    
+
+}
+.footer img{
+    width: 10%;
+}

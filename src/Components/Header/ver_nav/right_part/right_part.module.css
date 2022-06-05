@@ -1,0 +1,23 @@
+.right_part{
+    display: grid;
+    grid-template-columns: 38% 20%;
+    grid-auto-rows: minmax(10%,auto);
+    justify-content: end;
+    align-items: center;
+}
+
+
+.right_part button{
+    
+    width: 88%;
+    height: 4.5em;
+    background-color: rgb(68, 39, 99);
+    color:white;
+    border-radius: 11px;
+}
+.right_part button:hover{
+    color:gold;
+}
+.rITH_knop button{
+font-size: 9pt;
+}

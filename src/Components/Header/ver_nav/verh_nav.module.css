@@ -1,0 +1,9 @@
+.verh{
+    grid-area: v;
+    /* border: 5px solid yellow; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* justify-items: center;
+    align-items: end; */
+    
+}

@@ -1,0 +1,11 @@
+.footerCon{
+    display:grid;
+    grid-template-columns: 1fr 18% 1fr;
+}
+
+.dlend{
+    justify-self: end;
+}
+.dlcen{
+    justify-self: center;
+}

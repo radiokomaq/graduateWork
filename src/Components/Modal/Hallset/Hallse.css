@@ -1,0 +1,96 @@
+.modal5{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+opacity: 0;
+pointer-events: none;
+  transition: 0.5s;
+}
+
+.modal5.active{
+  opacity: 1;
+  pointer-events: all;
+  backdrop-filter: blur(10px);
+
+}
+
+.modal_cont5{
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgb(34,38,43); 
+  height: 466px;
+  width: 500px;
+  transform: scale(0.5);
+  transition: 0.4s all;
+
+}
+
+.gridlets{
+  display: grid;
+  grid-template:  1fr /1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.modal_cont5.active{
+  transform: scale(1);
+}
+
+.busy{
+  text-align: center;
+  padding: 10%;
+  display: block;
+  background-color: red;
+  border-radius: 10%;
+}
+.free{
+  text-align: center;
+  color:whitesmoke;
+  background-color: rgb(108,28,255);
+  padding: 10%;
+  border-radius: 10%;
+}
+.free:hover{
+  border-radius: 10%;
+  color: rgb(86, 243, 152);
+  background-color: goldenrod;
+}
+.cliked{
+  border-radius: 10%;
+  color:whitesmoke;
+  text-align: center;
+  padding: 10%;
+  background-color: green;
+}
+.ekr{
+  width: 100%;
+  /* perspective-origin:center center; */
+  /* transform:matrix(1.0231601731601732,0,0,1.08961038961038963,10,10); */
+  /* transform:skewY(-0.1deg); */
+  height: 26%;
+  margin-bottom: 7%;
+  image-rendering:pixelated;
+  /* object-fit:cover; */
+}
+.vibr span{
+  display: grid;
+  font-size: 10pt;
+
+}
+.bay{
+  margin-left: 10%;
+  background-color: rgb(68, 39, 99);
+  color: white;
+  border: 1px solid black;
+  border-radius: 6%;
+  width: 100px;
+  height: 30px;
+
+}
+.igoto{
+  color:whitesmoke;
+}

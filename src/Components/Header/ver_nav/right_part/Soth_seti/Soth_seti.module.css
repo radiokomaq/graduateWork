@@ -1,0 +1,44 @@
+.seti{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.telega{
+    width: 50%;
+    height: 2.7em;
+
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+            transition:         transform .8s ease-in-out;
+}
+.telega:hover {
+    -webkit-transform: rotate(360deg); /* Градусы поворота можно изменить по необходимости */
+            transform: rotate(360deg); /* Градусы поворота можно изменить по необходимости */
+  }
+  .inst{
+    /* align-self: center;
+    justify-self: start; */
+    width: 50%;
+    height: 2.7em;
+    transition: 0.35s; /* Время эффекта */
+    display: block;
+    border-radius: 25%;
+  }
+  .inst:hover {
+    transform: scale(1.4); /* Увеличиваем масштаб */
+  }
+
+  .vk{
+    /* align-self: center;
+    justify-self: start; */
+    width: 50%;
+    /* justify-self: start; */
+    height: 2.7em;
+    border-radius: 25%;
+    transition: 0.35s; /* Время эффекта */
+    display: block;
+  }
+  .vk:hover {
+    transform: scale(1.4); /* Увеличиваем масштаб */
+  }

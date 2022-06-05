@@ -1,0 +1,16 @@
+.film{
+    /* border: 2px solid deeppink; */
+    background-color: rgb(68, 39, 99);
+    display: grid;
+    /* grid: repeat(3, 25%)/ repeat(4, 25%); */
+    grid-template-columns: 25% 25% 25% 25%;
+    /* grid-template-rows: 25% 25% 25% -25%; */
+
+    /* align-items: center; */
+    grid-row-gap: 1em;
+    /* font-size: calc(1vw + 100px); */
+
+    
+}
+
+

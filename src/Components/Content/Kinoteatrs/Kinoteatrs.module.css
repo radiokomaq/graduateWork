@@ -1,0 +1,17 @@
+.kinoteatrs{
+    
+    display: grid;
+    grid-template-columns: 66% 34%;
+
+}
+
+.kinoteatrs img{
+    width: 100%;
+}
+.ssi{
+    background-color: rgb(68, 39, 99);
+    
+}
+.ssi h2{
+    text-align: center;
+}

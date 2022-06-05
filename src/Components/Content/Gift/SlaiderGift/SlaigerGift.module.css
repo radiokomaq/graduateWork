@@ -1,0 +1,16 @@
+.sl{
+    display: grid;
+    grid-template-rows: 3% 50% 10%;
+}
+.sl h2{
+    text-align: center;
+    color:white
+}
+
+.sl img{
+    justify-self: center;
+}
+
+.gift img{
+    height: 10em;
+}

@@ -1,0 +1,70 @@
+.modal2{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+opacity: 0;
+pointer-events: none;
+    transition: 0.5s;
+}
+
+.modal2.active{
+    opacity: 1;
+    pointer-events: all;
+    backdrop-filter: blur(10px);
+
+}
+
+.modal_cont2{
+    padding: 20px;
+    border-radius: 12px;
+    background-color: white; 
+    height: 404px;
+    width: 500px;
+    transform: scale(0.5);
+    transition: 0.4s all;
+
+}
+.modal_cont2.active{
+    transform: scale(1);
+}
+.form_gr2{
+    display: grid;
+    grid-row-gap: 25px;
+    text-align: center;
+}
+.form_gr2 h1{
+    color: rgb(68, 39, 99)
+}
+.form_gr2 input{
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid rgb(68, 39, 99);
+}
+.form_gr2 button{
+    background-color: rgb(68, 39, 99);
+    color:white;
+    border-radius: 4px;
+    justify-self: center;
+    width: 175px;
+    height: 50px;
+}
+
+.spaik2{
+    display: grid;
+    grid-template-columns: 19% 1fr 19%;
+}
+.spaik2 img{
+    height: 4em;
+}
+
+.spaik2 button{
+    background-color: rgb(68, 39, 99);
+    border-radius: 5.5px;
+    color:white;
+    height: 84%;
+}

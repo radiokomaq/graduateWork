@@ -1,0 +1,27 @@
+.despkin{
+    display: grid;
+    grid-template-rows: -1fr;
+    color: rgb(91,100,97)
+}
+.despkin p{
+    justify-self: center;
+    align-self: start;
+}
+.despkin ul{
+    align-self: center;
+    justify-self: start;
+}
+.despkin li{
+    
+    color: green;
+}
+
+.despkin li span{
+    color: rgb(91,100,97)
+}
+.despkin a{
+    text-decoration: none;
+}
+.despkin h5{
+    align-self: start;
+}

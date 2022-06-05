@@ -1,0 +1,16 @@
+/* .filmVideoElem img{
+    width: 15%;
+    border-radius: 5%;
+} */
+
+.pleer{
+    border-radius: 1%;
+    border: 2px solid black;
+}
+
+.filmVideoElem{
+    display: grid;
+grid-template-rows: 80% -1fr;
+/* grid-gap: 1em; */
+
+}

@@ -1,0 +1,14 @@
+.dann{
+    /* justify-items: center; */
+    align-self: start;
+text-align: center;
+}
+.dann img{
+    width: 51%;
+    
+   
+}
+.dann button{
+    width: 30%;
+    height: 3em;
+}

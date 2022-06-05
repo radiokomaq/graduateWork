@@ -1,0 +1,55 @@
+.film_dann {
+    /* border: 2px solid deeppink; */
+    display: grid;
+    grid-template-rows: 1fr -4fr 1fr;
+    grid-row-gap: 0.75em;
+    
+text-decoration: none;
+color: black;
+    /* align-items: end; */
+    /* justify-content: end; */
+    /* justify-self: end; */
+    /* align-self: start; */
+
+}
+
+.film_dann img {
+    /* justify-self: center; */
+    /* align-self: center; */
+     width: 11vw;
+    height: 34vh; 
+    /* width: 14rem; */
+    /* height: 23rem; */
+    border-radius: 5.5%;
+
+}
+.image{
+    /* justify-self: center; */
+    /* justify-content: center; */
+    align-self: start;
+    justify-self: center;
+
+}
+.raiting {
+    align-self: start;
+    align-items: center;
+    justify-self: center;
+/* justify-self: center; */
+    /* text-align: center; */
+}
+
+.title {
+    font-size: 21pt;
+    color:white;
+    /* text-align: center; */
+    align-self: end;
+    justify-self: center;
+}
+.title span{
+    text-align: center;
+}
+.obram {
+    border: 1px solid whitesmoke;
+    border-radius: 6px;
+    color:aliceblue;
+}
