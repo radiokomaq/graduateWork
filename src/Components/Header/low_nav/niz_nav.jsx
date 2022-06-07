@@ -13,7 +13,11 @@ const Niz_nav = (props) => {
 
     function prms(){
        let dai = prompt('ввести туть',1)
-       
+       if(dai<100){
+        props.prokid3(false)
+        routeChange()
+       }else{
+       dai=dai-100;
        if(dai<=0 || dai<=12){
            console.log(1);
           props.prokid4(dai)
@@ -24,6 +28,7 @@ const Niz_nav = (props) => {
            routeChange()
        }
     }
+}
     return (
         <nav>
             <div className={stili.niz}>

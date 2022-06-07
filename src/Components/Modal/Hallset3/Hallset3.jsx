@@ -1,8 +1,9 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect, useContext} from 'react'
 import './Hallset3.css'
 import * as axios from 'axios';
 import {observer} from "mobx-react-lite";
 import conteiner from '../../../store/conteiner'
+import { Context } from '../../../context/context';
 
  const Hallset3 =observer((props) =>  {
   const[formVl, setFormVl] = useState(false)
@@ -26,14 +27,17 @@ import conteiner from '../../../store/conteiner'
     }
 
   }
+  const[otpd3, setOtpd3]=useContext(Context);
 function blocksit(){
   let response='';
   var xhr = new XMLHttpRequest();
   var formElement = new FormData()
+  formElement.set('name', otpd3.name)
+  formElement.set('email', otpd3.email)
   formElement.set('block', conteiner.ms)
   formElement.set('title', props.prokid5)
   formElement.set('stathalls', '3')
-  xhr.open('POST', 'http://test2.ua/busy');
+  xhr.open('POST', 'http://80.87.199.186/busy');
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
         // response = JSON.parse(xhr.response);

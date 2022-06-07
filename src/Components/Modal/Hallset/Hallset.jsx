@@ -1,9 +1,10 @@
-import React, { useState, useEffect} from 'react'
+import React, { useState, useEffect, useContext} from 'react'
 import './Hallse.css'
 import * as axios from 'axios';
 import {observer} from "mobx-react-lite";
 import conteiner from '../../../store/conteiner'
 import Mistake from '../Mistake/Mistake';
+import { Context } from '../../../context/context';
 
 const Hallset = observer((props) => {
 
@@ -30,14 +31,18 @@ const Hallset = observer((props) => {
     }
 
   }
+  const[otpd, setOtpd]=useContext(Context);
+  
 function blocksit(){
   let response='';
   var xhr = new XMLHttpRequest();
   var formElement = new FormData()
+  formElement.set('name', otpd.name)
+  formElement.set('email', otpd.email)
   formElement.set('block', conteiner.ms)
   formElement.set('title', props.prokid5)
   formElement.set('stathalls', '1')
-  xhr.open('POST', 'http://test2.ua/busy');
+  xhr.open('POST', 'http://80.87.199.186/busy');
   xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
 //         response = JSON.parse(xhr.response);

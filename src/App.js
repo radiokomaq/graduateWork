@@ -39,7 +39,7 @@ const App = (props) => {
   //------------------------dtmas------------------------
   useEffect(() => {
 
-    axios.get('http://test2.ua/posHouseFilm').then(({ data }) => {
+    axios.get('http://80.87.199.186/posHouseFilm').then(({ data }) => {
       const allNam = data;
       setAppFilmPos(allNam);
     });
@@ -71,7 +71,7 @@ const App = (props) => {
   //==============stoimost==============================
   useEffect(() => {
     // const apiUrl = 'http://www.filltext.com/?rows=32&id={number|1000}&firstName={firstName}&lastName={lastName}&email={email}&phone={phone|(xxx)xxx-xx-xx}&address={addressObject}&description={lorem|32}';
-    axios.get('http://test2.ua/test').then((resp) => {
+    axios.get('http://80.87.199.186/test').then((resp) => {
       const allPersons = resp.data;
       setAppState(allPersons);
     });
@@ -134,7 +134,7 @@ const [filmEvent, setFilmEvent] = useState([{
   pathname: '122'
 }]);
   useEffect(() => {
-    axios.get('http://test2.ua/getFilms').then((resp) => {
+    axios.get('http://80.87.199.186/getFilms').then((resp) => {
       const allPersons = resp.data;
       setFilmEvent(allPersons);
     });
@@ -152,7 +152,7 @@ const [filmEvent, setFilmEvent] = useState([{
     var xhr = new XMLHttpRequest();
     var formElement = new FormData()
     formElement.set('jvt', cookies.token)
-    xhr.open('POST', 'http://test2.ua/setkok');
+    xhr.open('POST', 'http://80.87.199.186/setkok');
     xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
           response = JSON.parse(xhr.response);
@@ -236,7 +236,6 @@ let CdFilmElem = filmEvent.map(r=> <Route path={r.url} element={<FilmEleming id=
         </div>
 
         <div className='footer'>
-          dllldflfdlf;
           <Foot />
  </div>
 

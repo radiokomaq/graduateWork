@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import stili from './TextInfo.module.css'
 import * as axios from 'axios';
 import Hallset from '../../../../Modal/Hallset/Hallset';
@@ -6,6 +6,8 @@ import Mistake from '../../../../Modal/Mistake/Mistake';
 import Hallset2 from '../../../../Modal/Hallset2/Hallset2';
 import Hallset3 from '../../../../Modal/Hallset3/Hallset3';
 import { NavLink } from 'react-router-dom';
+import { Context } from '../../../../../context/context';
+import { useNavigate } from 'react-router-dom';
 
 const TextInfo = React.memo((props) => {
 
@@ -27,6 +29,35 @@ const TextInfo = React.memo((props) => {
     const [allPersons, setAllPersons] = useState([{
 
     }])
+    let navigate20 = useNavigate(); 
+    function routeChange20(){ 
+      let path2 = `/Unification`; 
+      navigate20(path2);
+    }
+    const[jdfjkdf,setJdfjkdf] = useContext(Context)
+    function filmhouse(){
+        if (props.prokid.cookies == null) {
+            props.prokid.modal(true)
+        } else {
+            let response=[];
+            var xhr = new XMLHttpRequest();
+            var formElement = new FormData()
+            formElement.set('name', jdfjkdf.name)
+            formElement.set('email', jdfjkdf.email)
+            formElement.set('title', props.prokid.title)
+            formElement.set('pos', props.prokid.id)
+            xhr.open('POST', 'http://80.87.199.186/filmhouse');
+            xhr.onreadystatechange = function() {
+              if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                  response = JSON.parse(xhr.response);
+                  setAllPersons(response);
+                }
+            }
+            xhr.send(formElement);
+            routeChange20();
+        }
+        
+    }
     function test() {
         if (props.prokid.cookies == null) {
             props.prokid.modal(true)
@@ -37,7 +68,7 @@ const TextInfo = React.memo((props) => {
             var formElement = new FormData()
             formElement.set('title', props.prokid.title)
             formElement.set('stathalls', '1')
-            xhr.open('POST', 'http://test2.ua/inithall');
+            xhr.open('POST', 'http://80.87.199.186/inithall');
             xhr.onreadystatechange = function() {
               if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                   response = JSON.parse(xhr.response);
@@ -57,7 +88,7 @@ const TextInfo = React.memo((props) => {
             var formElement = new FormData()
             formElement.set('title', props.prokid.title)
             formElement.set('stathalls', '2')
-            xhr.open('POST', 'http://test2.ua/inithall');
+            xhr.open('POST', 'http://80.87.199.186/inithall');
             xhr.onreadystatechange = function() {
               if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                   response = JSON.parse(xhr.response);
@@ -77,7 +108,7 @@ const TextInfo = React.memo((props) => {
             var formElement = new FormData()
             formElement.set('title', props.prokid.title)
             formElement.set('stathalls', '3')
-            xhr.open('POST', 'http://test2.ua/inithall');
+            xhr.open('POST', 'http://80.87.199.186/inithall');
             xhr.onreadystatechange = function() {
               if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                   response = JSON.parse(xhr.response);
@@ -107,7 +138,7 @@ const TextInfo = React.memo((props) => {
             {props.prokid.knopurl == 'http://localhost:3000/Event' ?
             <div className={stili.shema}>
                 <div className={stili.podrknop}> 
-                <button>Купить фильм</button> 
+                <button onClick={()=> filmhouse()}>Купить фильм</button> 
                 </div>
                 <div className={stili.podr}>
                 <NavLink to='/detalic'> Подробнее</NavLink>

@@ -9,6 +9,8 @@
 
 .sl img{
     justify-self: center;
+    /* align-self: center; */
+    width: 40%;
 }
 
 .gift img{

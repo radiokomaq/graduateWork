@@ -18,7 +18,7 @@ function add_Filmi(){
     var xhr = new XMLHttpRequest();
     let response = 0
     let formData = new FormData(document.forms.EventFilm);
-    xhr.open('POST', 'http://test2.ua/add_Film');
+    xhr.open('POST', 'http://80.87.199.186/add_Film');
     // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {

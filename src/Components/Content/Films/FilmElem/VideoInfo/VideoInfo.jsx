@@ -6,7 +6,7 @@ import FilmSlaider from './FilmSlaider/FilmSlaider';
 const VideoInfo = (props) =>{
     return(
         <div className={stili.filmVideoElem}>
-            <div>
+            <div >
             <ReactPlayer url={props.prokid} className={stili.pleer} />
             </div>
             <div>

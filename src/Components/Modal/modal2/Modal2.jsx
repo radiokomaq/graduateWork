@@ -67,7 +67,7 @@ const blurHandler = (e) => {
             var xhr = new XMLHttpRequest();
             let response = 0
             let formData = new FormData(document.forms.person2);
-            xhr.open('POST', 'http://test2.ua/valid_tok'); 
+            xhr.open('POST', 'http://80.87.199.186/valid_tok'); 
 
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {

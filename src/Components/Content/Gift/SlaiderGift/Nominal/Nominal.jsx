@@ -37,7 +37,7 @@ console.log(props.prokid);
     formElement.set('kolv', conteiner.count)
     formElement.set('nominal', active1)
     formElement.set('token', props.prokid)
-    xhr.open('POST', 'http://test2.ua/kardgt');
+    xhr.open('POST', 'http://80.87.199.186/kardgt');
     xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
           response = JSON.parse(xhr.response);
