@@ -25,7 +25,11 @@ padding: 11px 22px;
     
 }
 
-
+.nominal b{
+    font-size:11pt;
+    color:white;
+    font-weight: 400;
+}
 .nominal{
     justify-content: center;
     justify-self: center;

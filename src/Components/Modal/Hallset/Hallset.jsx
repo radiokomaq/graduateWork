@@ -32,7 +32,7 @@ const Hallset = observer((props) => {
 
   }
   const[otpd, setOtpd]=useContext(Context);
-  
+  console.log(conteiner.ms.length);
 function blocksit(){
   let response='';
   var xhr = new XMLHttpRequest();
@@ -40,6 +40,7 @@ function blocksit(){
   formElement.set('name', otpd.name)
   formElement.set('email', otpd.email)
   formElement.set('block', conteiner.ms)
+  formElement.set('price', conteiner.ms.length*3000)
   formElement.set('title', props.prokid5)
   formElement.set('stathalls', '1')
   xhr.open('POST', 'http://80.87.199.186/busy');

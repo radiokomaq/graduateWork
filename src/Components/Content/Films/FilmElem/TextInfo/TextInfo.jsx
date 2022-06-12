@@ -8,6 +8,7 @@ import Hallset3 from '../../../../Modal/Hallset3/Hallset3';
 import { NavLink } from 'react-router-dom';
 import { Context } from '../../../../../context/context';
 import { useNavigate } from 'react-router-dom';
+import Select from 'react-select'
 
 const TextInfo = React.memo((props) => {
 
@@ -39,18 +40,23 @@ const TextInfo = React.memo((props) => {
         if (props.prokid.cookies == null) {
             props.prokid.modal(true)
         } else {
-            let response=[];
+            let response=0;
             var xhr = new XMLHttpRequest();
             var formElement = new FormData()
             formElement.set('name', jdfjkdf.name)
             formElement.set('email', jdfjkdf.email)
             formElement.set('title', props.prokid.title)
+            formElement.set('token', props.prokid.cookies)
             formElement.set('pos', props.prokid.id)
             xhr.open('POST', 'http://80.87.199.186/filmhouse');
             xhr.onreadystatechange = function() {
               if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                   response = JSON.parse(xhr.response);
-                  setAllPersons(response);
+                  if(response=='error'){
+                    alert('Недостаточно средств, пополните баланс')
+                  }else{
+                    setJdfjkdf.ostatok(response)                    
+                  }
                 }
             }
             xhr.send(formElement);
@@ -118,6 +124,35 @@ const TextInfo = React.memo((props) => {
             xhr.send(formElement);
         }
     }
+    const options = [{
+        value:'20.06.22',
+        label:'20.06.22'
+    },
+    {
+        value:'21.06.22',
+        label:'21.06.22'
+    },
+    {
+        value:'22.06.22',
+        label:'22.06.22'
+    },
+    {
+        value:'23.06.22',
+        label:'23.06.22'
+    },
+    {
+        value:'24.06.22',
+        label:'24.06.22'
+    },
+    ]
+    const [dayPick, setDayPick] = useState('20.06.22')
+    
+    const getValue =() =>{
+        return dayPick ? options.find(c => c.value === dayPick): ''
+    }
+    const onChange = (newValue) =>{
+        setDayPick(newValue.value)
+    }
 
     return (<div>
         <div className={stili.filmTextInfo}>
@@ -147,13 +182,13 @@ const TextInfo = React.memo((props) => {
                 :
                 // <button onClick={() => test() }>Купить билет</button>
                 <div>
-                    <h2 className={stili.rasp}> Сеансы сегодня:</h2>
+                    <h2 className={stili.rasp}> Сеансы <Select onChange={onChange} value={getValue()} options={options} /></h2>
                     <h3 className={stili.dwod} >2D</h3>
                     <div className={stili.pokup}>
 
                         <div className={stili.vremyapokup}>
 
-                            <span className={stili.time} onClick={() => test()}> 21:00</span>
+                            <span className={stili.time} onClick={() => test()}>{dayPick=='20.06.22'? <span>21:00</span> : dayPick=='21.06.22'? <span>20:00</span>:dayPick=='22.06.22'? <span>19:00</span>:dayPick=='23.06.22'? <span>18:00</span>:<span>17:00</span>}</span>
                             <span className={stili.price}> от 2500₽</span>
                             <span className={stili.price}> зал 1</span>
                             <span className={stili.price}> VIP зал</span>

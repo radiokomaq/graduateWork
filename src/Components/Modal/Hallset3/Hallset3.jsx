@@ -35,6 +35,7 @@ function blocksit(){
   formElement.set('name', otpd3.name)
   formElement.set('email', otpd3.email)
   formElement.set('block', conteiner.ms)
+  formElement.set('price', conteiner.ms.length*300)
   formElement.set('title', props.prokid5)
   formElement.set('stathalls', '3')
   xhr.open('POST', 'http://80.87.199.186/busy');

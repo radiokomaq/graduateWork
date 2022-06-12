@@ -23,6 +23,7 @@ import {authRout, prosmfilm} from "./context/rout"
 import { Context } from './context/context.js';
 import { Animate } from './animate/animate';
 import Detalic from './Components/Content/Film_for_house/detalic/detalic';
+import lupa from './redux/fotos/lupa2.png'
 // import Hallset from './Components/Modal/modal3/Hallset';
 
 const App = (props) => {
@@ -119,9 +120,9 @@ const [cookies, setCookie, removeCookie] = useCookies(["user","email","token"]);
     let path2 = `/Films`; 
     navigate2(path2);
   }
-
+//Красиво поменять 
   useEffect(() => {
-    if (cookies.token==null ){
+    if (cookies.token==null){
       setChek(false);
       routeChange2()
     }else{
@@ -146,9 +147,13 @@ const [filmEvent, setFilmEvent] = useState([{
  const [tokenData, setTokenData]=useState({
   name: '123',
  })
+const [basketFilm, setBasketFilm] = useState()
+const [basketFilmKod, setBasketFilmKod] = useState()
  useEffect(() => {
   if(cookies.token!=null){
     let response = 0;
+    let viufu =[]
+    let viufu2=[]
     var xhr = new XMLHttpRequest();
     var formElement = new FormData()
     formElement.set('jvt', cookies.token)
@@ -156,6 +161,11 @@ const [filmEvent, setFilmEvent] = useState([{
     xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
           response = JSON.parse(xhr.response);
+          for (let i = 2; i < response.length; i++) {
+            // viufu.push(response[i].title)
+            viufu=[...viufu,response[i].title]
+            viufu2=[...viufu2,response[i].pos]
+          }
           setTokenData({
             "email": response[0].email,
             "name": response[0].name,
@@ -164,12 +174,14 @@ const [filmEvent, setFilmEvent] = useState([{
             "role":response[0].role
             
     })
+    setBasketFilm(viufu)
+    setBasketFilmKod(viufu2)
         }
     }
     xhr.send(formElement);
    
   }
-// console.log(tokenData);
+
  },[])
 
  document.body.onload = function () {
@@ -183,7 +195,7 @@ const [filmEvent, setFilmEvent] = useState([{
 
 let CdFilmElem = filmEvent.map(r=> <Route path={r.url} element={<FilmEleming id={r.id} avatar={r.avadesp1} avatar2={r.avadesp2} avatar3={r.avadesp3} title={r.title} age_limit={r.age_limit} genre={r.genre} actor={r.actor} dir={r.dir} info={r.info} description={r.description} triler={r.triler} vibfilm={setFilmvib} prosm={filmvib} knopurl={r.urlsil} cookies={cookies.token} modal={setModalActive} />} />)
   // let CdFilmElem = props.prokid.filmsPage.filmsCreate.map(r => <Route path={r.url}  element={<FilmEleming id={r.id} avatar={r.avatar} title={r.title} age_limit={r.age_limit} genre={r.genre} actor={r.actor} dir={r.dir} info={r.info} description={r.description} triler={r.triler} vibfilm={setFilmvib} prosm={filmvib} knopurl={r.urlsil} cookies={cookies.token} modal={setModalActive} />} />)
-  let CdFilmHouseElem = props.prokid.filmFoHouse.filmHouseCreate.map(r => <Route path={r.url} element={<FilmEleming id={r.id} avatar={r.avatar} title={r.title} age_limit={r.age_limit} genre={r.genre} actor={r.actor} dir={r.dir} info={r.info} description={r.description} triler={r.triler} vibfilm={setFilmvib} prosm={filmvib} knopurl={r.urlsil} cookies={cookies.token} modal={setModalActive}/>} />)
+  let CdFilmHouseElem = props.prokid.filmFoHouse.filmHouseCreate.map(r => <Route path={r.url} element={<FilmEleming id={r.id}  title={r.title} age_limit={r.age_limit} genre={r.genre} actor={r.actor} dir={r.dir} info={r.info} description={r.description} triler={r.triler} vibfilm={setFilmvib} prosm={filmvib} knopurl={r.urlsil} cookies={cookies.token} modal={setModalActive} avatar={r.avatar1} avatar2={r.avatar2} avatar3={r.avatar3}/>} />)
   let CdSaleElem = props.prokid.saleContent.saleCont_create.map(s => <Route path={s.url}  element={<Sale_item avatar={s.avatar} title={s.title} desp={s.desp} desp2={s.desp2} />} />)
   return (
     <Context.Provider value={
@@ -196,17 +208,40 @@ let CdFilmElem = filmEvent.map(r=> <Route path={r.url} element={<FilmEleming id=
         <div className='bsHead'>
           <Head prokid={setModalActive} prokid2={cookies} prokid3={setPropusk} prokid4={setOtvetNaFilm}/>
         </div>
-        <Animate />
+        {/* <Animate /> */}
         
-        {/* <p>{cookies.user}</p>
-        <p>{cookies.email}</p> */}
-        {/* <p>{cookies.token}</p>
-        <p>{tokenData.name}</p>
-        <p>{tokenData.email}</p>
-        <p>{tokenData.colvkard}</p>
-        <p>{tokenData.nominal}</p> */}
+        <aside id='basket' className='basket'><div>
+          <img src={lupa}></img>
+          {basketFilm ? <h1>Ваши фильмы:</h1>:
+    <h1>Вы еще не преобритали фильмы!</h1>}
+<div className='basketPage'>
+  <div className='basketPage1'>
+  <h3>Фильм</h3>
+  {basketFilm ? basketFilm.map(elem =>{
+          return <p>{elem} :</p>
+        }):console.log('11')}
+  </div>
+  <div className='basketPage2'>
+  <h3>Код</h3>
+  {basketFilmKod ? basketFilmKod.map(elem =>{
+          return <p>{elem}</p>
+        }):console.log('11')}
+  </div>
+</div>
+            {/* <tr>
+              <td>10</td><th>{tokenData.title}</th>
+            </tr> */}
+
+          </div> </aside>
+        {/* <p>{tokenData.title}</p>  */}
+        {/* {basketFilm ? basketFilm.map(elem =>{
+          return <h1>{elem}</h1>
+        }):console.log('11')}
+         {basketFilmKod ? basketFilmKod.map(elem =>{
+          return <p>{elem}</p>
+        }):console.log('11')} */}
         <Modal active={modalActive} setActive={setModalActive} prokid={setModalActive2} email={email} setEmail={setEmail} password={password} setPassword={setPassword} name={name} setName={setName} />
-        <Modal2 active2={modalActive2} setActive2={setModalActive2} prokid={setModalActive}  idef={idef} setIdef={setIdef} kook={setCookie} chek={setChek}/>
+        <Modal2 active2={modalActive2} setActive2={setModalActive2} prokid={setModalActive}  idef={idef} setIdef={setIdef} kook={setCookie} chek={setChek} setBasketFilm={setBasketFilm} setBasketFilmKod={setBasketFilmKod}/>
         {/* <Cont /> */}
         <div className='content'>
           <Routes>

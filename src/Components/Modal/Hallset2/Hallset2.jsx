@@ -34,6 +34,7 @@ import { Context } from '../../../context/context';
     var formElement = new FormData()
     formElement.set('name', otpd2.name)
     formElement.set('email', otpd2.email)
+    formElement.set('price', conteiner.ms.length*500)
     formElement.set('block', conteiner.ms)
     formElement.set('title', props.prokid5)
     formElement.set('stathalls', '2')

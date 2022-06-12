@@ -5,7 +5,7 @@ import './Modal2.css'
 import logo from '../../Header/ver_nav/left_parts/foto/sakura2_test.png'
 import { Context } from '../../../context/context';
 
-const Modal2 = ({ active2, setActive2, prokid, kook, chek}) => {
+const Modal2 = ({ active2, setActive2, prokid, kook, chek, setBasketFilm, setBasketFilmKod}) => {
     const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 const [emailDirty, setEmailDirty] = useState(false);
@@ -66,12 +66,19 @@ const blurHandler = (e) => {
 
             var xhr = new XMLHttpRequest();
             let response = 0
+            let viufu =[]
+            let viufu2=[]
             let formData = new FormData(document.forms.person2);
             xhr.open('POST', 'http://80.87.199.186/valid_tok'); 
 
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
                     response = JSON.parse(xhr.response);
+                    for (let i = 2; i < response.length; i++) {
+                        // viufu.push(response[i].title)
+                        viufu=[...viufu,response[i].title]
+                        viufu2=[...viufu2,response[i].pos]
+                      }
                     if(response==1){
                         setPasswordError('Неверный email или пароль!')
                     }else{
@@ -83,6 +90,8 @@ const blurHandler = (e) => {
                         "ostatok": +response[1],
                         "role":response[0].role
                 })
+                setBasketFilm(viufu)
+                setBasketFilmKod(viufu2)
                     
                     routeChange()
                     chek(true)

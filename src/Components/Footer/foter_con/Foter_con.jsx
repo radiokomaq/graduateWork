@@ -39,7 +39,7 @@ const Foter_con =() =>{
             <div>
                 <ul>
                    <h4> О нас</h4>
-                    <li> Тут почта потом регну
+                    <li> kino.ekran.radiokoma@gmail.com
                     </li>
                     <li> 8-968-927-89-30
                     </li>

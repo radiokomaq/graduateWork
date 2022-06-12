@@ -33,4 +33,41 @@
     width: 100%;
 }
 
-
+.basket{
+    position: absolute;
+    background-color:aqua;
+    color:black;
+    top: 210px;
+    text-align: center;
+    right: 5px;
+    height: 73px;
+    width: 75px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: 1s all;
+}
+.basket:hover{
+    background-color:whitesmoke;
+    right: 0;
+    border-radius: 1%;
+    width: 500px;
+border: 1px solid black;
+    height: 470px;
+}
+.basketPage{
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    grid-column-gap: 1em ;
+}
+.basketPage1{
+    
+    text-align: end;
+    align-self: center;
+    justify-self: center;
+}
+.basketPage2{
+    
+    align-self: center;
+    justify-self: start;
+}

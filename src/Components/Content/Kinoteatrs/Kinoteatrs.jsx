@@ -4,7 +4,7 @@ import maps from './fotos/maps.png'
 import Kinos from './konos/Kinos';
 
 
-const Mesto_kino = () =>{
+const Mesto_kino = React.memo(() =>{
 
 
 
@@ -21,5 +21,5 @@ const Mesto_kino = () =>{
         </div>
         </div>
     )
-}
+})
 export default Mesto_kino;
