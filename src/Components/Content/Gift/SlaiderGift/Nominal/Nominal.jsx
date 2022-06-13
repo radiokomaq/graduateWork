@@ -4,14 +4,17 @@ import stili from './Nominal.module.css'
 import conteiner from '../../../../../store/conteiner';
 import { observer } from "mobx-react-lite";
 import Mistake from '../../../../Modal/Mistake/Mistake';
+import { useEffect } from 'react';
 
 const Nominal = observer((props) => {
     const [udachPokup, setUdachPokup] = useState(false)
+    const [missActiv, setMissActiv] = useState(false)
     const [tyt, setTyt] = useState()
     const [active1, setActive] = useState(0)
     var i = 0
     const t = (e) => {
         // setActive(500)
+        setUdachPokup(false)
         setActive(e.innerHTML)
     }
     console.log(props.prokid);
@@ -19,7 +22,6 @@ const Nominal = observer((props) => {
         if (props.prokid == null) {
             props.prokid2(true)
         } else {
-
             let response = 0;
             var xhr = new XMLHttpRequest();
             var formElement = new FormData()
@@ -35,13 +37,18 @@ const Nominal = observer((props) => {
             }
             xhr.send(formElement);
             setUdachPokup(true)
+            setMissActiv(true)
             conteiner.remove_increment()
             setActive(0)
         }
 
     }
     const masssss =[500,1000,1500,3000,5000];
-    
+   
+    useEffect(() => {
+        window.scroll(0,-100)  
+        setMissActiv(false)
+      },[missActiv])
     return (
 
         <div className={stili.nominal}>

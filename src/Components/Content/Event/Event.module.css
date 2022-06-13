@@ -1,4 +1,4 @@
-/* .event{
+.event{
     background: url("../../../redux/fotos/fon_fiolet.jpg");
     display: grid;
     grid-template-rows: 10% 1fr;
@@ -11,4 +11,57 @@ height: 75%;
 .info{
     color:whitesmoke;
     justify-self: center;
+}
+/* .select{
+    width: 250px;
+    position: relative;
+    margin: 0 auto;
+}
+.select_active{
+    border: 1px solid black;
+    border-top:0;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+}
+.select_header{
+    border: 1px solid black;
+    cursor: pointer;
+
+display: flex;
+}
+.select_current{
+    font-size: 18px;
+    line-height: 24;
+    padding: 8px;
+}
+.select_icon{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+    text-align: center;
+}
+.select_body{
+    border: 1px solid black;
+    border-top:0;
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+}
+.select_item{
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px;
+}
+.select_item:hover{
+    background-color: blue;
 } */

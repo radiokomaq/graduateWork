@@ -1,6 +1,6 @@
 .filmTextInfo{
     display: grid;
-    grid-template-rows: 1fr 50% ;
+    grid-template-rows: 1fr 45% ;
 grid-gap: 1em;
 /* align-items: end; */
 }
@@ -44,7 +44,7 @@ grid-gap: 1em;
     align-self: center;
     justify-self: start;
     display: grid;
-    grid-template-rows: 1% 45% 23% 23%;
+    grid-template-rows: 1% 45% 23% 23% ;
 }
 .time{
     
@@ -62,7 +62,10 @@ grid-gap: 1em;
     font-size:9pt ;
 }
 .rasp{
-    color:rgb(68, 39, 99)
+    color:black;
+    align-self: start;
+    justify-self: end;
+    
 }
 
 .shema{
@@ -79,6 +82,92 @@ grid-gap: 1em;
 .vniz{
     align-self: center;
 }
-select{
-    width: 30%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+.select span{
+    color:rgb(68, 39, 99);
+
+}
+
+.select{
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 0;
+    justify-self: start;
+ align-self: center;
+    width: 26%;
+
+    position: relative;
+    /* margin: 0 auto; */
+}
+.select_active{
+    background-color: rgba(255, 255, 255, 0.4);
+    border-top:0;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+    
+    /* top: 100%; */
+}
+.select_header{
+    
+    cursor: pointer;
+
+display: flex;
+}
+.select_current{
+    font-size: 18px;
+    /* line-height: 24; */
+    
+    padding: 9px 0;
+}
+.select_icon{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+    text-align: center;
+}
+.select_body{
+    border: 1px solid black;
+    border-top:0;
+    
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    /* top: 100%; */
+}
+.select_item{
+    cursor: pointer;
+border-bottom: 1px solid black;
+    font-size: 16px;
+    /* line-height: 24px; */
+padding: 9px;
+}
+.select_item:hover{
+
+    background-color: rgba(0, 0, 255, 0.6);
+    color:whitesmoke;
+}
+.opis_select{
+display: grid;
+grid-template-columns: 35% 1fr;
+grid-gap: 1em;
+
 }

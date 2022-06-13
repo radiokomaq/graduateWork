@@ -128,7 +128,7 @@ const [cookies, setCookie, removeCookie] = useCookies(["user","email","token"]);
     }else{
       setChek(true);
     }
-  },[])
+  },[cookies.token])
 
 
 const [filmEvent, setFilmEvent] = useState([{
@@ -233,13 +233,6 @@ let CdFilmElem = filmEvent.map(r=> <Route path={r.url} element={<FilmEleming id=
             </tr> */}
 
           </div> </aside>
-        {/* <p>{tokenData.title}</p>  */}
-        {/* {basketFilm ? basketFilm.map(elem =>{
-          return <h1>{elem}</h1>
-        }):console.log('11')}
-         {basketFilmKod ? basketFilmKod.map(elem =>{
-          return <p>{elem}</p>
-        }):console.log('11')} */}
         <Modal active={modalActive} setActive={setModalActive} prokid={setModalActive2} email={email} setEmail={setEmail} password={password} setPassword={setPassword} name={name} setName={setName} />
         <Modal2 active2={modalActive2} setActive2={setModalActive2} prokid={setModalActive}  idef={idef} setIdef={setIdef} kook={setCookie} chek={setChek} setBasketFilm={setBasketFilm} setBasketFilmKod={setBasketFilmKod}/>
         {/* <Cont /> */}
@@ -259,7 +252,6 @@ let CdFilmElem = filmEvent.map(r=> <Route path={r.url} element={<FilmEleming id=
             {CdSaleElem}
             {CdFilmHouseElem}
             <Route path='/Film_for_house' element={<Film_for_house prokid={props.prokid.filmFoHouse} />} />
-            {/* <Route path='/Unification' element={<LichKab remove={removeCookie} name={cookies.user}/>} /> */}
             {propusk && prosmfilm.map(({path, Component}) =>
             <Route path={path} element={<Evnt prokid={appState} prokid2={filmvib} prokid3={maste}/>}></Route>
             )}

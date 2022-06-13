@@ -32,7 +32,7 @@ const Hallset = observer((props) => {
 
   }
   const[otpd, setOtpd]=useContext(Context);
-  console.log(conteiner.ms.length);
+
 function blocksit(){
   let response='';
   var xhr = new XMLHttpRequest();
@@ -40,6 +40,7 @@ function blocksit(){
   formElement.set('name', otpd.name)
   formElement.set('email', otpd.email)
   formElement.set('block', conteiner.ms)
+  formElement.set('dayPick', props.dayPick)
   formElement.set('price', conteiner.ms.length*3000)
   formElement.set('title', props.prokid5)
   formElement.set('stathalls', '1')
@@ -80,7 +81,7 @@ function dul(){
         <h3 className='vibr'>Выбранно:<span>{conteiner.ms}</span></h3>
       </div>
       <span className='igoto'> Итоговая цена: {conteiner.ms.length*3000 + ' руб;'}</span>
-      <button className='bay' disabled={!formVl} onClick={()=>blocksit()}> Купить</button>
+      <button className='bay' disabled={!formVl} onClick={()=>blocksit()}> Забронировать</button>
     </div>
 
 

@@ -11,7 +11,6 @@ const Podarok = (props) =>{
             <InfoGift />
             
             <SlaiderG prokid={props.prokid} prokid2={props.prokid2}/>
-
         </div>
     )
 }

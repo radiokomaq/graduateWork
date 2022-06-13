@@ -4,56 +4,55 @@ import stili from './Event.module.css'
 import * as axios from 'axios';
 import Select from 'react-select'
 
-const Evnt = React.memo((props) =>{
-    
-//     const [appPos, setAppPos] = useState();
-//     useEffect(() => {
-//         axios.get('http://test2.ua/index4.php').then((resp) => {
-//           const allps = resp.data;
-//           setAppPos(allps);
-//         });
-//       });
+const Evnt = React.memo((props) => {
 
-const options = [{
-    value:'20.06.22',
-    label:'20.06.22'
-},
-{
-    value:'21.06.22',
-    label:'21.06.22'
-},
-{
-    value:'22.06.22',
-    label:'22.06.22'
-},
-{
-    value:'23.06.22',
-    label:'23.06.22'
-},
-{
-    value:'24.06.22',
-    label:'24.06.22'
-},
-]
-const [dayPick, setDayPick] = useState('20.06.22')
+  const [appPos, setAppPos] = useState();
+  useEffect(() => {
+      axios.get('http://test2.ua/index4.php').then((resp) => {
+        const allps = resp.data;
+        setAppPos(allps);
+      });
+    });
+//   const [otslActivMenu,setOtslActivMenu] = useState(true)
+//   const [dayPick, setDayPick] = useState('20.06.22')
+// function activeMenu(){
+// let e=document.getElementById('body')
+// if(otslActivMenu==false){
+//   e.className=stili.select_body
+//   setOtslActivMenu(!otslActivMenu)
+// }else{
+//   e.className=stili.select_active
+//   setOtslActivMenu(!otslActivMenu)
+// }
+// }
+// function smenaVal(e){
+//   setDayPick(e.innerHTML)
+// console.log(e.innerHTML);
+// }
+  return (
+    <div className={stili.event}>
 
-const getValue =() =>{
-    return dayPick ? options.find(c => c.value === dayPick): ''
-}
-const onChange = (newValue) =>{
-    setDayPick(newValue.value)
-}
-    return(
-        <div className={stili.event}>
-            <Select onChange={onChange} value={getValue()} options={options} />
-            <div>{dayPick=='20.06.22'? <span>1</span> : dayPick=='21.06.22'? <span>2</span>:dayPick=='22.06.22'? <span>3</span>:dayPick=='23.06.22'? <span>4</span>:<span>5</span>}</div>
-            {/* <div className={stili.info}>
-               <h1>Приятного просмотра:</h1> 
-            </div>
-            <div className={stili.film}>
-               <img src={props.prokid3}></img>
-            </div> */}
+        <div className={stili.info}>
+           <h1>Приятного просмотра:</h1> 
         </div>
-    )
+        <div className={stili.film}>
+           <img src={props.prokid3}></img>
+        </div>
+    </div>
+    // <div onClick={()=>activeMenu()} className={stili.select} >
+    //   <div className={stili.select_header}> 
+    //   <span className={stili.select_current}>{valueMenu}</span>
+    //         <div className={stili.select_icon}>&times;</div>
+    //   </div>
+
+    //   <div id='body' className={stili.select_body}>
+    //     <div onClick={e=>smenaVal(e.target)} className={stili.select_item}> Value 1</div>
+    //     <div onClick={e=>smenaVal(e.target)} className={stili.select_item}> Value 2</div>
+    //     <div onClick={e=>smenaVal(e.target)} className={stili.select_item}> Value 3</div>
+    //     <div onClick={e=>smenaVal(e.target)} className={stili.select_item}> Value 4</div>
+    //     <div onClick={e=>smenaVal(e.target)} className={stili.select_item}> Value 5</div>
+    //   </div>
+    // </div>
+  )
 })
 export default Evnt;

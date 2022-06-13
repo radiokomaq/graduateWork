@@ -16,8 +16,10 @@ color: black;
 .film_dann img {
     /* justify-self: center; */
     /* align-self: center; */
-     width: 11vw;
-    height: 34vh; 
+     /* width: 11vw;
+    height: 34vh;  */
+    width: 10vw;
+    height:35vh;
     /* width: 14rem; */
     /* height: 23rem; */
     border-radius: 5.5%;
@@ -34,12 +36,14 @@ color: black;
     align-self: start;
     align-items: center;
     justify-self: center;
+
 /* justify-self: center; */
     /* text-align: center; */
 }
 
 .title {
     font-size: 21pt;
+
     color:white;
     /* text-align: center; */
     align-self: end;
