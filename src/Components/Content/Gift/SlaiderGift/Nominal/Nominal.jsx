@@ -56,7 +56,7 @@ const Nominal = observer((props) => {
             <div className={stili.nom}>
                 {masssss.map(elem => 
                 {
-                  return  <span onClick={(e) => t(e.target)}> {elem}</span>
+                  return  <span onClick={e => t(e.target)}> {elem}</span>
                 
                 }
                 )}

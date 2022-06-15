@@ -6,44 +6,44 @@ import logo from '../../Header/ver_nav/left_parts/foto/sakura2_test.png'
 import { Context } from '../../../context/context';
 
 const Modal2 = ({ active2, setActive2, prokid, kook, chek, setBasketFilm, setBasketFilmKod}) => {
-    const [email, setEmail] = useState('');
-const [password, setPassword] = useState('');
-const [emailDirty, setEmailDirty] = useState(false);
-const [passwordDirty, setPasswordDirty] = useState(false);
-const [emailError, setEmailError] = useState('Емейл не может быть пустым');
-const [passwordError, setPasswordError] = useState('Пароль не может быть пустым');
-const [formValid, setFormValid] = useState(false);
+    const [email2, setEmail2] = useState('');
+const [password2, setPassword2] = useState('');
+const [emailDirty2, setEmailDirty2] = useState(false);
+const [passwordDirty2, setPasswordDirty2] = useState(false);
+const [emailError2, setEmailError2] = useState('Емейл не может быть пустым');
+const [passwordError2, setPasswordError2] = useState('Пароль не может быть пустым');
+const [formValid2, setFormValid2] = useState(false);
 
 
 useEffect(() => {
-    if (emailError || passwordError) {
-        setFormValid(false)
+    if (emailError2 || passwordError2) {
+        setFormValid2(false)
     } else {
-        setFormValid(true)
+        setFormValid2(true)
     }
-}, [emailError, passwordError])
+}, [emailError2, passwordError2])
 const emailHandler = (e) => {
-    setEmail(e.target.value)
+    setEmail2(e.target.value)
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;;
     if (!re.test(String(e.target.value).toLowerCase())) {
-        setEmailError('Некорректный емейл')
+        setEmailError2('Некорректный емейл')
     } else {
 
-        setEmailError('')
+        setEmailError2('')
 
 
     }
 }
 const passwordHolder = (e) => {
-    setPassword(e.target.value)
+    setPassword2(e.target.value)
     if (e.target.value.length < 7 || e.target.value.length > 15) {
-        setPasswordError('Пароль не должен быть меньше 7 и длиннее 15 символов!')
+        setPasswordError2('Пароль не должен быть меньше 7 и длиннее 15 символов!')
         if (!e.target.value) {
-            setPasswordError('Пароль не должен быть меньше 7 и длиннее 15 символов!')
+            setPasswordError2('Пароль не должен быть меньше 7 и длиннее 15 символов!')
         }
     } else {
 
-        setPasswordError('')
+        setPasswordError2('')
 
         }
 }
@@ -51,10 +51,10 @@ const passwordHolder = (e) => {
 const blurHandler = (e) => {
     switch (e.target.name) {
         case 'email':
-            setEmailDirty(true)
+            setEmailDirty2(true)
             break
         case 'password':
-            setPasswordDirty(true)
+            setPasswordDirty2(true)
             break
     }
 }
@@ -80,7 +80,7 @@ const blurHandler = (e) => {
                         viufu2=[...viufu2,response[i].pos]
                       }
                     if(response==1){
-                        setPasswordError('Неверный email или пароль!')
+                        setPasswordError2('Неверный email или пароль!')
                     }else{
                     kook("token",response[0].token, { path: '/' })
                     setTokenData({
@@ -127,15 +127,15 @@ const [tokenData, setTokenData]=useContext(Context)
                 
                 <form name='person2' className='form_gr'>
                     <h1>Вход</h1>
-                    {(emailDirty && emailError) && <span style={{ color: 'red' }}>{emailError}</span>}
-                    <input onChange={e => emailHandler(e)}  value={email} onBlur={e => blurHandler(e)} name='email' type="text" placeholder='Enter your email...' />
-                    {(passwordDirty && passwordError) && <span style={{ color: 'red' }}>{passwordError}</span>}
-                    <input onChange={e => passwordHolder(e)} value={password} onBlur={e => blurHandler(e)} name='password' type="password" placeholder='Enter your password...' /> 
+                    {(emailDirty2 && emailError2) && <span style={{ color: 'red' }}>{emailError2}</span>}
+                    <input onChange={e => emailHandler(e)}  value={email2} onBlur={e => blurHandler(e)} name='email' type="text" placeholder='Enter your email...' />
+                    {(passwordDirty2 && passwordError2) && <span style={{ color: 'red' }}>{passwordError2}</span>}
+                    <input onChange={e => passwordHolder(e)} value={password2} onBlur={e => blurHandler(e)} name='password' type="password" placeholder='Enter your password...' /> 
                         
 {/* {userDt.email} */}
                 </form>
 
-                <button disabled={!formValid} onClick={()=> jvtpr() } type='submit' >Войти</button> 
+                <button disabled={!formValid2} onClick={()=> jvtpr() } type='submit' >Войти</button> 
 
             </div>
         </div>

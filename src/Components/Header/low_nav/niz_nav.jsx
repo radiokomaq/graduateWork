@@ -12,7 +12,7 @@ const Niz_nav = (props) => {
     }
 
     function prms(){
-       let dai = prompt('ввести туть',1)
+       let dai = prompt('Введите код фильма:',1)
        if(dai<100){
         props.prokid3(false)
         routeChange()

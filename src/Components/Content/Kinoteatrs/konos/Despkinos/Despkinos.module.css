@@ -1,7 +1,7 @@
 .despkin{
     display: grid;
     grid-template-rows: -1fr;
-    color: rgb(91,100,97)
+    color: whitesmoke
 }
 .despkin p{
     justify-self: center;
@@ -17,7 +17,7 @@
 }
 
 .despkin li span{
-    color: rgb(91,100,97)
+    color: green
 }
 .despkin a{
     text-decoration: none;

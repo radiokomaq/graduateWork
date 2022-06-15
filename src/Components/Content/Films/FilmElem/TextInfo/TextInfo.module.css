@@ -1,7 +1,8 @@
 .filmTextInfo{
     display: grid;
-    grid-template-rows: 1fr 45% ;
+    grid-template-rows: 50% 1fr;
 grid-gap: 1em;
+grid-auto-rows: minmax(50%,auto);
 /* align-items: end; */
 }
 .filmTextInfo button{
@@ -37,6 +38,7 @@ grid-gap: 1em;
     width: 35%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap:1em;
     
 
 }
@@ -70,19 +72,31 @@ grid-gap: 1em;
 
 .shema{
     display: grid;
-    grid-template-columns: 30% 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:1em;
 }
 .podrknop{
+
     justify-self: center;
 }
+.podrknop button{
+    cursor: pointer;
+}
+.podrstil{
+    cursor: pointer;
+    text-decoration: none;
+}
 .podr{
+    
     align-self: center;
-    justify-self: start;
+    justify-self: end;
 }
 .vniz{
-    align-self: center;
+    align-self: end;
 }
-
+.vverh{
+    /* justify-self: center; */
+}
 
 
 
@@ -134,6 +148,7 @@ display: flex;
     padding: 9px 0;
 }
 .select_icon{
+    background-color: rgba(255, 255, 255, 0.5);
     width: 40px;
     height: 40px;
     display: flex;

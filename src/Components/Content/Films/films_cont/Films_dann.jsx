@@ -13,7 +13,8 @@ const Films_dann = (props) => {
             <img src={props.avatar}></img>
             </div>
             <div className={stili.raiting}>
-                <span className={stili.obram}> {props.age_limit}</span><span>{ ' ' + props.genre}</span>
+                <span className={stili.obram}> {props.age_limit}</span>
+                <span className={stili.genre}>{ ' ' + props.genre}</span>
             </div>
 
         </NavLink>

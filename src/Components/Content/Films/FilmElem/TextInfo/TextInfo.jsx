@@ -165,7 +165,7 @@ const TextInfo = React.memo((props) => {
     }, [misstake])
     return (<div>
         <div className={stili.filmTextInfo}>
-            <div>
+            <div className={stili.vverh}>
                 <h1>{props.prokid.title}</h1>
                 <p>{props.prokid.info}</p>
                 <p>{props.prokid.age_limit}</p>
@@ -186,7 +186,7 @@ const TextInfo = React.memo((props) => {
                             <button onClick={() => filmhouse()}>Купить фильм</button>
                         </div>
                         <div className={stili.podr}>
-                            <NavLink to='/detalic'> Подробнее</NavLink>
+                            <NavLink className={stili.podrstil} to='/detalic'> Подробнее &rarr;</NavLink>
                         </div>
                     </div>
                     :
@@ -245,11 +245,6 @@ const TextInfo = React.memo((props) => {
         {misstake ?
             <Mistake > </Mistake> : ''
         }
-        {/* </a> */}
-        {/* </a> */}
-        {/* <button onClick={()=> test() + alert('1')}>Тестим рас два</button> */}
-        {/* <a href='http://test2.ua/ajzap/'> ggggg</a> */}
-        {/* {props.prokid.prosm} */}
     </div>
     )
 });

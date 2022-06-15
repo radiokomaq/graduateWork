@@ -7,7 +7,7 @@ const VideoInfo = (props) =>{
     return(
         <div className={stili.filmVideoElem}>
             <div >
-            <ReactPlayer url={props.prokid} className={stili.pleer} />
+            <ReactPlayer width='600px' controls url={props.prokid} className={stili.pleer} />
             </div>
             <div>
                 <FilmSlaider prokid={props.prokid2} prokid2={props.prokid3} prokid3={props.prokid4}/>

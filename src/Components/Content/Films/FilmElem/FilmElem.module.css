@@ -1,11 +1,10 @@
 .filmElem{
     background: url("../../../../redux/fotos/marvel_fon.jpg");
     display: grid;
-    grid-template-columns: 0.7fr 1fr;
+    grid-template-columns: 0.5fr 1fr;
     grid-gap:3em;
     
 }
 .pleyer{
-  justify-self: center;
-
+  justify-self: start;
 }

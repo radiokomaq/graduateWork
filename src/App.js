@@ -208,7 +208,7 @@ let CdFilmElem = filmEvent.map(r=> <Route path={r.url} element={<FilmEleming id=
         <div className='bsHead'>
           <Head prokid={setModalActive} prokid2={cookies} prokid3={setPropusk} prokid4={setOtvetNaFilm}/>
         </div>
-        {/* <Animate /> */}
+        <Animate />
         
         <aside id='basket' className='basket'><div>
           <img src={lupa}></img>
@@ -216,16 +216,16 @@ let CdFilmElem = filmEvent.map(r=> <Route path={r.url} element={<FilmEleming id=
     <h1>Вы еще не преобритали фильмы!</h1>}
 <div className='basketPage'>
   <div className='basketPage1'>
-  <h3>Фильм</h3>
+    {basketFilm ? <h3>Фильм</h3> : ''}
   {basketFilm ? basketFilm.map(elem =>{
           return <p>{elem} :</p>
-        }):console.log('11')}
+        }):''}
   </div>
   <div className='basketPage2'>
-  <h3>Код</h3>
+  {basketFilm ? <h3>Код</h3> : ''}
   {basketFilmKod ? basketFilmKod.map(elem =>{
           return <p>{elem}</p>
-        }):console.log('11')}
+        }):''}
   </div>
 </div>
             {/* <tr>
