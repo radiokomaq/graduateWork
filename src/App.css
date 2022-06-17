@@ -39,21 +39,23 @@
 .basket{
     position: absolute;
     background-color:aqua;
-    color:black;
+    color:whitesmoke;
     top: 210px;
     text-align: center;
     right: 45px;
     height: 73px;
     width: 75px;
-    overflow: hidden;
-    scroll-behavior:inherit;
+    font-size: 0pt;
+    /* overflow:hidden; */
     cursor: pointer;
     border-radius: 100%;
-    transition: 1s all;
+    transition: 0.8s all;
 }
 .basket:hover{
     background-color:whitesmoke;
+    color:black;
     right: 10;
+    font-size: 12pt;
     border-radius: 1%;
     overflow-y: scroll;
     width: 500px;

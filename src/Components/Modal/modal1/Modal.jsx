@@ -19,7 +19,6 @@ const Modal = ({ active, setActive, prokid, email,setEmail,password,setPassword,
     const [formValid, setFormValid] = useState(false)
 
 
-// console.log(ems);
     useEffect(() => {
         if (emailError || passwordError || nameError || phoneError) {
             setFormValid(false)
@@ -54,11 +53,6 @@ const Modal = ({ active, setActive, prokid, email,setEmail,password,setPassword,
 
    const phoneHandler =(e)=>{
        setPhone(e.target.value)
-    //    if(!/^\+\d*$/.test(e.target.value))
-    //    // То вставляем знак плюса как значение
-    //    setPhone('+7')
-    //    if(!/\d/.test(e.target.value))
-    //    e.target.value.preventDefault();
        if((e.target.value.length<12) || (e.target.value.length>12)){
                   if(!/^\+\d*$/.test(e.target.value)){
        setPhone('+7')
