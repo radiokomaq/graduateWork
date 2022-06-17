@@ -13,7 +13,7 @@ ReactDOM.render(
   <BrowserRouter>
     <App prokid={state_dann}/>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
   </CookiesProvider>,
   document.getElementById('root')
 );

@@ -81,7 +81,7 @@ function dul(){
         <h3 className='vibr'>Выбранно:<span>{conteiner.ms}</span></h3>
       </div>
       <span className='igoto'> Итоговая цена: {conteiner.ms.length*3000 + ' руб;'}</span>
-      <button className='bay' disabled={!formVl} onClick={()=>blocksit()}> Забронировать</button>
+      <button className='bay' disabled={!formVl} onClick={()=>blocksit()}>Забронировать</button>
     </div>
 
 

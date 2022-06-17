@@ -1,34 +1,49 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import { propTypes } from 'react-bootstrap/esm/Image';
 import { NavLink, useNavigate } from 'react-router-dom';
+import ErrorStake from './ErrorStake/ErrorStake';
 import stili from './niz_nav.module.css'
 
-const Niz_nav = (props) => {
 
-    let navigate = useNavigate(); 
-    function routeChange(){ 
+const Niz_nav = React.memo((props) => {
+
+    let navigate6 = useNavigate(); 
+    function routeChange33(){ 
       let path4 = `/Films`; 
-      navigate(path4);
+      navigate6(path4);
     }
-
+const [errorPokaz,setErrorPokaz] = useState(false)
     function prms(){
+        setErrorPokaz(false)
+        console.log(errorPokaz);
        let dai = prompt('Введите код фильма:',1)
+       
+
        if(dai<100){
         props.prokid3(false)
-        routeChange()
+        setErrorPokaz(true)
+        routeChange33()
        }else{
        dai=dai-100;
        if(dai<=0 || dai<=12){
-           console.log(1);
           props.prokid4(dai)
            props.prokid3(true)
+           setErrorPokaz(false)
        }else{
            console.log('не то');
            props.prokid3(false)
-           routeChange()
+           setErrorPokaz(true)
+           routeChange33()
        }
     }
 }
+
+useEffect(() => {
+
+    window.scroll(0, -100)
+
+}, [errorPokaz])
     return (
         <nav>
             <div className={stili.niz}>
@@ -43,7 +58,8 @@ const Niz_nav = (props) => {
 
 
             </div>
+            {errorPokaz ? <ErrorStake> </ErrorStake>:''}
         </nav>
     )
-}
+})
 export default Niz_nav;
